@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class complex{
+	private :
+		const double x, y;
+	public :
+		complex (const double a=0, const double b=0) : x(a), y(b) {}
+		complex (const complex &C) : x(C.x), y(C.y) {}
+		
+	       ~complex(){}
+
+
+		double mag_sq() const {
+			double m =((x*x) + (y*y));
+			return m;
+		}
+
+		complex operator + (const complex &m) const {
+			return complex(x + m.x, y + m.y);
+		}
+
+		void display(){
+			cout << x << " + " << y << "i " << endl;
+		}
+};
+
+int main(){
+	complex a(1,2), b(2,3);
+	complex c = a + b;
+	c.display();
+}
